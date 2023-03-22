@@ -1,0 +1,13 @@
+.ikonli-font-icon-in-dark-mode {
+    -fx-icon-code: "cli-moon";
+    -fx-icon-color: white;
+    -fx-background-color: black;
+    -fx-icon-size: 1.2em;
+}
+
+.ikonli-font-icon-in-light-mode {
+    -fx-icon-code: "cli-moon";
+    -fx-icon-color: black;
+    -fx-background-color: white;
+    -fx-icon-size: 1.2em;
+}

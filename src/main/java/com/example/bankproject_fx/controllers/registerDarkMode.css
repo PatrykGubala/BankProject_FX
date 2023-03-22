@@ -1,0 +1,13 @@
+.register_container{
+    -fx-background-color: black;
+}
+
+.register_container_secondary{
+    -fx-background-color: #016064;
+
+}
+
+.register_container_buttons {
+    -fx-background-color: #016064;
+    -fx-text-fill: white;
+}
