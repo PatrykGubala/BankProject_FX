@@ -4,37 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7524edd0-dd09-47f1-aa51-03850f176d07" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/HelloApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/RegisterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/loginLightMode.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/registerDarkMode.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/dao/JdbcDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/model/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/model/BankUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/views/ViewFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/ClientAccount.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/Styles/ClientAccount.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/Styles/lightSwitchIcon.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/Styles/registerDarkMode.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/Styles/registerLightMode.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/login.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/register.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="7524edd0-dd09-47f1-aa51-03850f176d07" name="Changes" comment="Added few things, code compiles" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,11 +95,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679171225420</updated>
-      <workItem from="1679171226658" duration="36102000" />
+      <workItem from="1679171226658" duration="37228000" />
     </task>
+    <task id="LOCAL-00001" summary="Added few things, code compiles">
+      <created>1679463665320</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679463665320</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added few things, code compiles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added few things, code compiles" />
   </component>
 </project>
