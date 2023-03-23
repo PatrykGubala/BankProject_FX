@@ -11,7 +11,7 @@
     <children>
         <Pane prefHeight="420.0" prefWidth="200.0" styleClass="register_container_secondary">
          <children>
-            <Button fx:id="lightSwitch" layoutX="14.0" layoutY="354.0" mnemonicParsing="false" onMouseClicked="#onLightSwitch" styleClass="light_switch_button">
+            <Button fx:id="lightSwitch" layoutX="14.0" layoutY="354.0" mnemonicParsing="false" onMouseClicked="#onLightSwitch" styleClass="fourth">
                <graphic>
                   <FontIcon iconLiteral="cil-moon" iconSize="32" styleClass="register_font_icon" />
                </graphic>
@@ -25,6 +25,6 @@
         <TextField fx:id="telefon" layoutX="503.0" layoutY="139.0" promptText="Telefon:" />
         <TextField fx:id="ulica" layoutX="504.0" layoutY="210.0" promptText="Ul.:" />
         <DatePicker fx:id="data" layoutX="490.0" layoutY="284.0" style="-fx-background-color: tyme;" />
-      <Button layoutX="559.0" layoutY="347.0" mnemonicParsing="false" styleClass="register_container_buttons" text="Sign up" />
+      <Button fx:id="signUpButton" layoutX="559.0" layoutY="347.0" mnemonicParsing="false" onMouseClicked="#onSignUpButtonClicked" styleClass="register_container_buttons" text="Sign up" />
     </children>
 </AnchorPane>

@@ -21,3 +21,8 @@
 .light_switch_button {
     -fx-background-color: #000222;
 }
+.inputBox {
+    -fx-background-color: transparent;
+    -fx-border-color: black;
+    -fx-border-width: 0 0 2 0;
+}

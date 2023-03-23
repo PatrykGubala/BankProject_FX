@@ -1,7 +1,9 @@
 package com.example.bankproject_fx.views;
 
 import com.example.bankproject_fx.HelloApplication;
+import com.example.bankproject_fx.controllers.BankCustomerController;
 import com.example.bankproject_fx.controllers.RegisterController;
+import com.example.bankproject_fx.model.BankUser;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -12,15 +14,22 @@ public class ViewFactory {
 
 
     public void showLoginWindow(){
-
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
+        createStage(fxmlLoader);
     }
 
-    public void showClientWindow(){
+    public void showClientWindow(BankUser bankUser){
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("bankCustomer.fxml"));
+        BankCustomerController bankCustomerController = new BankCustomerController();
+        bankCustomerController.setUserInformation(bankUser);
+        fxmlLoader.setController(bankCustomerController);
+        createStage(fxmlLoader);
 
     }
 
     public void showRegisterWindow(){
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("register.fxml"));
+
         createStage(fxmlLoader);
 
 

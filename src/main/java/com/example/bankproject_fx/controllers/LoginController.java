@@ -1,7 +1,10 @@
 package com.example.bankproject_fx.controllers;
 
 
+import com.example.bankproject_fx.dao.BankDatabase;
 import com.example.bankproject_fx.dao.JdbcDAO;
+import com.example.bankproject_fx.model.BankAccount;
+import com.example.bankproject_fx.model.BankUser;
 import com.example.bankproject_fx.views.ViewFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,10 +15,13 @@ import net.synedra.validatorfx.Validator;
 
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 
 public class LoginController implements Initializable {
+    private ViewFactory viewFactory = new ViewFactory();
     private Validator validator = new Validator();
     @FXML
     private TextField loginField;
@@ -28,22 +34,33 @@ public class LoginController implements Initializable {
 
     @FXML
     private Button signUpButton;
+    private List<BankUser> bankCustomers;
 
 
 
 
     @FXML
     void signInUser(MouseEvent event) throws SQLException {
-        String fullName = loginField.getText();
-        String emailId = passwordField.getText();
-        String password = "123";
+        String login = loginField.getText();
+        String password = passwordField.getText();
+        BankDatabase bankDatabase = new BankDatabase();
 
-        JdbcDAO jdbcDao = new JdbcDAO();
-        jdbcDao.insertRecord(fullName, emailId, password);
+//        JdbcDAO jdbcDao = new JdbcDAO();
+//        jdbcDao.insertRecord(fullName, emailId, password);
+//
+//        Window owner = signInButton.getScene().getWindow();
+//        showAlert(Alert.AlertType.CONFIRMATION, owner, "Registration Successful!",
+//                "Welcome " + loginField.getText());
+        BankUser bankUser = new BankUser("12","12",100,"12","12","12","12");
+        viewFactory.showClientWindow(bankUser);
+        List<BankAccount>bankAccounts= new ArrayList<>();
+        bankAccounts=bankDatabase.getBankAccounts("656");
+        for (BankAccount bankAccount : bankAccounts) {
+            System.out.println(bankAccount.toString());
 
-        Window owner = signInButton.getScene().getWindow();
-        showAlert(Alert.AlertType.CONFIRMATION, owner, "Registration Successful!",
-                "Welcome " + loginField.getText());
+        }
+
+
     }
 
     private static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
@@ -54,6 +71,8 @@ public class LoginController implements Initializable {
         alert.initOwner(owner);
         alert.show();
     }
+
+
 
 
     @FXML

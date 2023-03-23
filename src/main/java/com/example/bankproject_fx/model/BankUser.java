@@ -13,7 +13,7 @@ public class BankUser {
     private String numerDomu;
     private String dataUrodzenia;
 
-    private List<Account> accounts;
+
 
     @Override
     public String toString() {
@@ -29,8 +29,7 @@ public class BankUser {
                 '}';
     }
 
-    public BankUser( String imie, String naziwsko, int saldo, String ulica, String miasto, String numerDomu, String dataUrodzenia, List<Account> accounts) {
-        this.id = id;
+    public BankUser( String imie, String naziwsko, int saldo, String ulica, String miasto, String numerDomu, String dataUrodzenia) {
         this.imie = imie;
         this.naziwsko = naziwsko;
         this.saldo = saldo;
@@ -38,11 +37,9 @@ public class BankUser {
         this.miasto = miasto;
         this.numerDomu = numerDomu;
         this.dataUrodzenia = dataUrodzenia;
-        this.accounts = accounts;
+
     }
-    public void addAccount(Account account) {
-        accounts.add(account);
-    }
+
 
     public String getId() {
         return id;
