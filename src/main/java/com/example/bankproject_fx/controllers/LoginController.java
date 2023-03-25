@@ -5,6 +5,7 @@ import com.example.bankproject_fx.dao.BankDatabase;
 import com.example.bankproject_fx.dao.JdbcDAO;
 import com.example.bankproject_fx.model.BankAccount;
 import com.example.bankproject_fx.model.BankUser;
+import com.example.bankproject_fx.model.Session;
 import com.example.bankproject_fx.views.ViewFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -52,13 +53,18 @@ public class LoginController implements Initializable {
 //        showAlert(Alert.AlertType.CONFIRMATION, owner, "Registration Successful!",
 //                "Welcome " + loginField.getText());
         BankUser bankUser = new BankUser("12","12",100,"12","12","12","12");
-        viewFactory.showClientWindow(bankUser);
+        Session.getInstance().getViewFactory().showClientWindow2();
         List<BankAccount>bankAccounts= new ArrayList<>();
         bankAccounts=bankDatabase.getBankAccounts("656");
         for (BankAccount bankAccount : bankAccounts) {
             System.out.println(bankAccount.toString());
 
         }
+        Session.getInstance().setBankUser(bankUser);
+        Session session = Session.getInstance();
+        BankUser user = session.getBankUser();
+        System.out.println(user.getImie()+user.getNaziwsko());
+
 
 
     }
@@ -93,6 +99,8 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
 
     }
 }

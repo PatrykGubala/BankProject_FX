@@ -2,6 +2,7 @@ package com.example.bankproject_fx.controllers;
 
 
 import com.example.bankproject_fx.model.BankUser;
+import com.example.bankproject_fx.model.Session;
 import com.example.bankproject_fx.views.ViewFactory;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -60,6 +61,10 @@ public class BankCustomerController implements Initializable {
 
     @FXML
     void onLogoutButtonClicked(MouseEvent event) {
+
+        Session session = Session.getInstance();
+        BankUser user = session.getBankUser();
+        System.out.println(user.getImie()+user.getNaziwsko());
         this.loggedInUser = null;
         viewFactory.showLoginWindow();
     }

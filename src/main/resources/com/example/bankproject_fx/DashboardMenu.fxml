@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="150.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bankproject_fx.controllers.DashboardMenuController">
+   <children>
+      <VBox layoutY="84.0" prefHeight="417.0" prefWidth="150.0">
+         <children>
+            <Button fx:id="dashboardButton" mnemonicParsing="false" onMouseClicked="#onDashboardButtonClicked" prefHeight="50.0" prefWidth="150.0" text="Menu główne">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="accountInformationButton" mnemonicParsing="false" onMouseClicked="#onAccountInformationButtonClicked" prefHeight="50.0" prefWidth="150.0" text="Profil">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="historyButton" mnemonicParsing="false" onMouseClicked="#onHistoryButtonClicked" prefHeight="50.0" prefWidth="150.0" text="Historia transakcji">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="yourAccountsButton" mnemonicParsing="false" onMouseClicked="#onYourAccountsButtonClicked" prefHeight="50.0" prefWidth="150.0" text="Twoje konta">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <Button fx:id="logoutButton" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#onLogoutButtonClicked" prefHeight="50.0" prefWidth="150.0" text="Wyloguj" />
+      <Text layoutX="40.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BANK" wrappingWidth="70.556640625">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
