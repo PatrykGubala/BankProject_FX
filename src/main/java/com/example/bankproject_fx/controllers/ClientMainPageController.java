@@ -1,13 +1,19 @@
 package com.example.bankproject_fx.controllers;
 
 
+import com.example.bankproject_fx.model.BankUser;
+import com.example.bankproject_fx.model.Session;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class ClientMainPageController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class ClientMainPageController implements Initializable {
 
     @FXML
     private TextField amount_fld;
@@ -33,4 +39,15 @@ public class ClientMainPageController {
     @FXML
     private Button sent_money_btn;
 
+    private BankUser bankUser;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        bankUser = Session.getInstance().getBankUser();
+        nameLabel.setText(bankUser.getImie()+bankUser.getNazwisko());
+        emailLabel.setText(bankUser.getEmail());
+        hiLabel.setText(bankUser.getImie());
+        moneyLabel.setText(Double.toString(bankUser.getSaldo()));
+
+    }
 }

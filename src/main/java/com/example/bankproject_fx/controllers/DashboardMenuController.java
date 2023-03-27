@@ -41,7 +41,8 @@ public class DashboardMenuController {
 
     @FXML
     void onLogoutButtonClicked(MouseEvent event) {
-
+        Session.getInstance().setBankUser(null);
+        Session.getInstance().getViewFactory().showLoginWindow();
     }
 
     @FXML

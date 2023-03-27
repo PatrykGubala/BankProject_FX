@@ -2,8 +2,7 @@ package com.example.bankproject_fx.controllers;
 
 
 import com.example.bankproject_fx.dao.BankDatabase;
-import com.example.bankproject_fx.dao.JdbcDAO;
-import com.example.bankproject_fx.model.BankAccount;
+import com.example.bankproject_fx.model.BankUsers;
 import com.example.bankproject_fx.model.BankUser;
 import com.example.bankproject_fx.model.Session;
 import com.example.bankproject_fx.views.ViewFactory;
@@ -44,7 +43,15 @@ public class LoginController implements Initializable {
     void signInUser(MouseEvent event) throws SQLException {
         String login = loginField.getText();
         String password = passwordField.getText();
-        BankDatabase bankDatabase = new BankDatabase();
+        if(Session.getInstance().getBankDatabase().credentialsConfirmation(login, password)){
+            Session.getInstance().getViewFactory().showClientWindow2();
+        }else{
+            System.out.println("too bad doog");
+
+        }
+        //BankDatabase bankDatabase = new BankDatabase();
+
+
 
 //        JdbcDAO jdbcDao = new JdbcDAO();
 //        jdbcDao.insertRecord(fullName, emailId, password);
@@ -52,18 +59,14 @@ public class LoginController implements Initializable {
 //        Window owner = signInButton.getScene().getWindow();
 //        showAlert(Alert.AlertType.CONFIRMATION, owner, "Registration Successful!",
 //                "Welcome " + loginField.getText());
-        BankUser bankUser = new BankUser("12","12",100,"12","12","12","12");
-        Session.getInstance().getViewFactory().showClientWindow2();
-        List<BankAccount>bankAccounts= new ArrayList<>();
-        bankAccounts=bankDatabase.getBankAccounts("656");
-        for (BankAccount bankAccount : bankAccounts) {
-            System.out.println(bankAccount.toString());
+        //BankDatabase bankDatabase = new BankDatabase();
+        //List<BankUsers>bankAccounts= new ArrayList<>();
+        //bankAccounts=bankDatabase.getBankAccounts("656");
+       // for (BankUsers bankAccount : bankAccounts) {
+          //  System.out.println(bankAccount.toString());
 
-        }
-        Session.getInstance().setBankUser(bankUser);
-        Session session = Session.getInstance();
-        BankUser user = session.getBankUser();
-        System.out.println(user.getImie()+user.getNaziwsko());
+      //  }
+
 
 
 

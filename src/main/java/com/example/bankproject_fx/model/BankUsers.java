@@ -1,13 +1,13 @@
 package com.example.bankproject_fx.model;
 
-public class BankAccount {
+public class BankUsers {
     private int accountId;
     private String customerId;
     private String accountType;
     private double balance;
     private String currency;
 
-    public BankAccount(int accountId, String customerId, String accountType, double balance, String currency) {
+    public BankUsers(int accountId, String customerId, String accountType, double balance, String currency) {
         this.accountId = accountId;
         this.customerId = customerId;
         this.accountType = accountType;

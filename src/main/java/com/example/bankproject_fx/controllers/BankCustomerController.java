@@ -64,7 +64,7 @@ public class BankCustomerController implements Initializable {
 
         Session session = Session.getInstance();
         BankUser user = session.getBankUser();
-        System.out.println(user.getImie()+user.getNaziwsko());
+        System.out.println(user.getImie()+user.getNazwisko());
         this.loggedInUser = null;
         viewFactory.showLoginWindow();
     }
@@ -76,7 +76,7 @@ public class BankCustomerController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try{
-            nameLabel.setText(loggedInUser.getImie()+" "+loggedInUser.getNaziwsko());
+            nameLabel.setText(loggedInUser.getImie()+" "+loggedInUser.getNazwisko());
         }catch(Exception e){
             System.out.println(e.getMessage());
         }

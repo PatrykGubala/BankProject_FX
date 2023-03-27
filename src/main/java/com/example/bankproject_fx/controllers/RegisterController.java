@@ -1,5 +1,7 @@
 package com.example.bankproject_fx.controllers;
 
+import com.example.bankproject_fx.model.BankUser;
+import com.example.bankproject_fx.model.Session;
 import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -72,16 +74,15 @@ public class RegisterController implements Initializable {
 
     @FXML
     void onSignUpButtonClicked(MouseEvent event) {
-
+        BankUser bankUser = new BankUser(firstName.getText(),secondName.getText(),email.getText(),telefon.getText(), 100,ulica.getText(),miasto.getText(),kodPocztowy.getText(),data.toString());
+        System.out.println(bankUser.toString());
+        System.out.println(validator.containsErrorsProperty());
+        Session.getInstance().getBankDatabase().addBankUser(bankUser);
     }
 
     @FXML
     void onMouseMoved(MouseEvent event) {
-        TooltipWrapper<Button> signUpWrapper = new TooltipWrapper<>(
-                signUpButton,
-                this.validator.containsErrorsProperty(),
-                Bindings.concat("Cannot sign up:\n", this.validator.createStringBinding())
-        );
+
     }
 
 
@@ -90,27 +91,17 @@ public class RegisterController implements Initializable {
     public void setLightMode(){
         System.out.println(mainPane.getStylesheets());
         mainPane.getStylesheets().remove(0);
-        //System.out.println(mainPane.getStylesheets());
         mainPane.getStylesheets().add(registerLightModeCss);
         mode = Mode.light;
-        //System.out.println(mainPane.getStylesheets());
     }
 
     public void setDarkMode(){
-
-
-
         System.out.println(mainPane.getStylesheets());
         mainPane.getStylesheets().remove(0);
         System.out.println(mainPane.getStylesheets());
-        //System.out.println(mainPane.getStylesheets());
         mainPane.getStylesheets().add(registerDarkModeCss);
         System.out.println(mainPane.getStylesheets());
-       // mainPane.getStylesheets().remove("registerLightMode.css");
-        //System.out.println(mainPane.getStylesheets());
-        //mainPane.getStylesheets().add("registerDarkMode.css");
-        mode = Mode.dark;
-        //System.out.println(mainPane.getStylesheets());
+         mode = Mode.dark;
     }
 
     @Override
@@ -118,11 +109,6 @@ public class RegisterController implements Initializable {
 
         mode = Mode.light;
         System.out.println(resourceBundle);
-
-
-
-        Button button = new Button();
-
 
         validatorCheck(firstName, "^[A-Za-z]+$");
         validatorCheck(telefon, "^(\\+48|48)?[\\s-]?(\\d{3}[\\s-]?\\d{3}[\\s-]?\\d{3}|\\d{2}[\\s-]?\\d{3}[\\s-]?\\d{2}[\\s-]?\\d{2})$");

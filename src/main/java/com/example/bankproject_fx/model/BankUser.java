@@ -1,55 +1,71 @@
 package com.example.bankproject_fx.model;
 
-import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class BankUser {
-    private String id;
+    private int customer_id;
     private String imie;
-    private String naziwsko;
-    private int saldo;
+    private String nazwisko;
+    private String email;
+    private String numerTelefonu;
+
+    private double saldo;
     private String ulica;
     private String miasto;
 
-    private String numerDomu;
+    private String kodPocztowy;
     private String dataUrodzenia;
-
-
-
 
 
     @Override
     public String toString() {
         return "BankUser{" +
-                "id='" + id + '\'' +
                 ", imie='" + imie + '\'' +
-                ", naziwsko='" + naziwsko + '\'' +
+                ", nazwisko='" + nazwisko + '\'' +
+                ", email='" + email + '\'' +
+                ", numerTelefonu='" + numerTelefonu + '\'' +
                 ", saldo=" + saldo +
                 ", ulica='" + ulica + '\'' +
                 ", miasto='" + miasto + '\'' +
-                ", numerDomu='" + numerDomu + '\'' +
+                ", kodPocztowy='" + kodPocztowy + '\'' +
                 ", dataUrodzenia='" + dataUrodzenia + '\'' +
                 '}';
     }
 
-    public BankUser( String imie, String naziwsko, int saldo, String ulica, String miasto, String numerDomu, String dataUrodzenia) {
+    public BankUser(String imie, String nazwisko, String email, String numerTelefonu, double saldo, String ulica, String miasto, String kodPocztowy, String dataUrodzenia) {
+
         this.imie = imie;
-        this.naziwsko = naziwsko;
+        this.nazwisko = nazwisko;
+        this.email = email;
+        this.numerTelefonu = numerTelefonu;
         this.saldo = saldo;
         this.ulica = ulica;
         this.miasto = miasto;
-        this.numerDomu = numerDomu;
+        this.kodPocztowy = kodPocztowy;
         this.dataUrodzenia = dataUrodzenia;
-
     }
 
 
-    public String getId() {
-        return id;
+
+    public String getEmail() {
+        return email;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setEmail(String email) {
+        this.email = email;
     }
+
+    public String getNumerTelefonu() {
+        return numerTelefonu;
+    }
+
+    public void setNumerTelefonu(String numerTelefonu) {
+        this.numerTelefonu = numerTelefonu;
+    }
+
+
+
+
 
     public String getImie() {
         return imie;
@@ -59,19 +75,19 @@ public class BankUser {
         this.imie = imie;
     }
 
-    public String getNaziwsko() {
-        return naziwsko;
+    public String getNazwisko() {
+        return nazwisko;
     }
 
-    public void setNaziwsko(String naziwsko) {
-        this.naziwsko = naziwsko;
+    public void setNazwisko(String nazwisko) {
+        this.nazwisko = nazwisko;
     }
 
-    public int getSaldo() {
+    public double getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(int saldo) {
+    public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
@@ -91,12 +107,12 @@ public class BankUser {
         this.miasto = miasto;
     }
 
-    public String getNumerDomu() {
-        return numerDomu;
+    public String getKodPocztowy() {
+        return kodPocztowy;
     }
 
-    public void setNumerDomu(String numerDomu) {
-        this.numerDomu = numerDomu;
+    public void setKodPocztowy(String kodPocztowy) {
+        this.kodPocztowy = kodPocztowy;
     }
 
     public String getDataUrodzenia() {
