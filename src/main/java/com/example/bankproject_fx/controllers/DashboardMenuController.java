@@ -2,6 +2,7 @@ package com.example.bankproject_fx.controllers;
 
 
 import com.example.bankproject_fx.model.Session;
+import com.example.bankproject_fx.views.CurrentChoice;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
@@ -30,12 +31,13 @@ public class DashboardMenuController {
 
     @FXML
     void onDashboardButtonClicked(MouseEvent event) {
-
+        Session.getInstance().getViewFactory().getCurrentChoiceProperty().set(CurrentChoice.DASHBOARD);
     }
 
     @FXML
     void onHistoryButtonClicked(MouseEvent event) {
-        Session.getInstance().getViewFactory().showTransactionsWindow();
+        //Session.getInstance().getViewFactory().changeSceneWindow();
+        Session.getInstance().getViewFactory().getCurrentChoiceProperty().set(CurrentChoice.TRANSACTIONS);
 
     }
 

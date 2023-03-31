@@ -1,8 +1,6 @@
 package com.example.bankproject_fx.controllers;
 
 
-import com.example.bankproject_fx.dao.BankDatabase;
-import com.example.bankproject_fx.model.BankUsers;
 import com.example.bankproject_fx.model.BankUser;
 import com.example.bankproject_fx.model.Session;
 import com.example.bankproject_fx.views.ViewFactory;
@@ -15,7 +13,6 @@ import net.synedra.validatorfx.Validator;
 
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -44,7 +41,7 @@ public class LoginController implements Initializable {
         String login = loginField.getText();
         String password = passwordField.getText();
         if(Session.getInstance().getBankDatabase().credentialsConfirmation(login, password)){
-            Session.getInstance().getViewFactory().showClientWindow2();
+            Session.getInstance().getViewFactory().showClientWindow();
         }else{
             System.out.println("too bad doog");
 

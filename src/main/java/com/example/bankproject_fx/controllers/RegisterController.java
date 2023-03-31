@@ -2,6 +2,7 @@ package com.example.bankproject_fx.controllers;
 
 import com.example.bankproject_fx.model.BankUser;
 import com.example.bankproject_fx.model.Session;
+import com.example.bankproject_fx.views.Mode;
 import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -62,7 +63,7 @@ public class RegisterController implements Initializable {
     @FXML
     private FontIcon lightSwitchIcon;
 
-    private enum Mode {light, dark};
+    //private enum Mode {light, dark};
     private Mode mode;
     String registerLightModeCss = getClass().getResource("/com/example/bankproject_fx/Styles/registerLightMode.css").toExternalForm();
     String registerDarkModeCss = getClass().getResource("/com/example/bankproject_fx/Styles/registerDarkMode.css").toExternalForm();
@@ -89,10 +90,26 @@ public class RegisterController implements Initializable {
 
 
     public void setLightMode(){
+
         System.out.println(mainPane.getStylesheets());
         mainPane.getStylesheets().remove(0);
         mainPane.getStylesheets().add(registerLightModeCss);
         mode = Mode.light;
+    }
+    public void changeMode(){
+        if(Session.getInstance().getChoosenMode().equals(Mode.light)){
+            System.out.println(mainPane.getStylesheets());
+            mainPane.getStylesheets().remove(0);
+            mainPane.getStylesheets().add(registerDarkModeCss);
+            Session.getInstance().setChoosenMode(Mode.dark);
+        }
+        else{
+            System.out.println(mainPane.getStylesheets());
+            mainPane.getStylesheets().remove(0);
+            mainPane.getStylesheets().add(registerLightModeCss);
+            Session.getInstance().setChoosenMode(Mode.light);
+        }
+
     }
 
     public void setDarkMode(){
@@ -107,7 +124,7 @@ public class RegisterController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        mode = Mode.light;
+
         System.out.println(resourceBundle);
 
         validatorCheck(firstName, "^[A-Za-z]+$");
@@ -136,12 +153,7 @@ public class RegisterController implements Initializable {
     }
     @FXML
     public void onLightSwitch(MouseEvent mouseEvent) {
-        if (mode.equals(Mode.light)){
-            setDarkMode();
-        }
-        else {
-            setLightMode();
-        }
+        changeMode();
 
     }
 }

@@ -1,43 +1,80 @@
 package com.example.bankproject_fx.views;
 
 import com.example.bankproject_fx.HelloApplication;
-import com.example.bankproject_fx.controllers.BankCustomerController;
-import com.example.bankproject_fx.controllers.ClientController;
-import com.example.bankproject_fx.controllers.RegisterController;
-import com.example.bankproject_fx.model.BankUser;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class ViewFactory {
 
 
+    private final ObjectProperty<CurrentChoice> currentChoice;
 
+    private AnchorPane dashboardView;
+    private AnchorPane transactionsView;
+    private AnchorPane accountsView;
+
+    public ViewFactory() {
+        this.currentChoice = new SimpleObjectProperty<>();
+    }
+
+
+
+    public ObjectProperty<CurrentChoice> getCurrentChoiceProperty() {
+        return currentChoice;
+    }
+
+    public void setCurrentChoice(CurrentChoice currentChoice) {
+        this.currentChoice.set(currentChoice);
+    }
 
     public void showLoginWindow(){
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
         createStage(fxmlLoader);
     }
 
-    public void showClientWindow(BankUser bankUser){
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("bankCustomer.fxml"));
-        BankCustomerController bankCustomerController = new BankCustomerController();
-        bankCustomerController.setUserInformation(bankUser);
-        fxmlLoader.setController(bankCustomerController);
-        createStage(fxmlLoader);
-
-    }
-    public void showClientWindow2(){
+    public void showClientWindow(){
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Client.fxml"));
 
         createStage(fxmlLoader);
 
     }
-    public void showTransactionsWindow(){
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Transactions.fxml"));
 
-        createStage(fxmlLoader);
 
+    public AnchorPane getDashboardView() {
+        if (dashboardView == null) {
+            try {
+                dashboardView = new FXMLLoader(HelloApplication.class.getResource("ClientMainPage.fxml")).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return dashboardView;
+    }
+
+    public AnchorPane getTransactionsView() {
+        if (transactionsView == null) {
+            try {
+                transactionsView = new FXMLLoader(HelloApplication.class.getResource("TransactionsPage.fxml")).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return transactionsView;
+    }
+
+    public AnchorPane getEditView() {
+        if (dashboardView == null) {
+            try {
+                dashboardView = new FXMLLoader(HelloApplication.class.getResource("ClientMainPage.fxml")).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return dashboardView;
     }
 
     public void showRegisterWindow(){
