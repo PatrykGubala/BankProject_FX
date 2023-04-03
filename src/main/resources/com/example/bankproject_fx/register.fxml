@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -18,13 +19,15 @@
             </Button>
          </children></Pane>
         <TextField fx:id="firstName" layoutX="272.0" layoutY="70.0" promptText="Imie:" />
-        <TextField fx:id="email" layoutX="271.0" layoutY="139.0" promptText="Email:" />
-        <TextField fx:id="miasto" layoutX="271.0" layoutY="210.0" promptText="Miasto:" />
-        <TextField fx:id="kodPocztowy" layoutX="272.0" layoutY="284.0" promptText="Kod pocztowy:" />
-        <TextField fx:id="secondName" layoutX="503.0" layoutY="70.0" promptText="Nazwisko:" />
-        <TextField fx:id="telefon" layoutX="503.0" layoutY="139.0" promptText="Telefon:" />
-        <TextField fx:id="ulica" layoutX="504.0" layoutY="210.0" promptText="Ul.:" />
-        <DatePicker fx:id="data" layoutX="490.0" layoutY="284.0" style="-fx-background-color: tyme;" />
+        <TextField fx:id="email" layoutX="272.0" layoutY="164.0" promptText="Email:" />
+        <TextField fx:id="miasto" layoutX="503.0" layoutY="70.0" promptText="Miasto:" />
+        <TextField fx:id="kodPocztowy" layoutX="503.0" layoutY="117.0" promptText="Kod pocztowy:" />
+        <TextField fx:id="secondName" layoutX="272.0" layoutY="117.0" promptText="Nazwisko:" />
+        <TextField fx:id="telefon" layoutX="503.0" layoutY="210.0" promptText="Telefon:" />
+        <TextField fx:id="ulica" layoutX="503.0" layoutY="164.0" promptText="Ul.:" />
+        <DatePicker fx:id="data" layoutX="505.0" layoutY="258.0" prefHeight="25.0" prefWidth="149.0" promptText="Data urodzenia:" style="-fx-background-color: tyme;" />
       <Button fx:id="signUpButton" layoutX="559.0" layoutY="347.0" mnemonicParsing="false" onMouseClicked="#onSignUpButtonClicked" styleClass="register_container_buttons" text="Sign up" />
+      <PasswordField fx:id="passwordField" layoutX="272.0" layoutY="210.0" promptText="Hasło:" />
+      <PasswordField fx:id="confirmPasswordField" layoutX="272.0" layoutY="258.0" promptText="Potwierdź hasło:" />
     </children>
 </AnchorPane>

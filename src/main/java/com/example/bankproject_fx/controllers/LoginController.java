@@ -40,7 +40,7 @@ public class LoginController implements Initializable {
     void signInUser(MouseEvent event) throws SQLException {
         String login = loginField.getText();
         String password = passwordField.getText();
-        if(Session.getInstance().getBankDatabase().credentialsConfirmation(login, password)){
+        if(Session.getInstance().getBankDatabase().credentialsConfirmation2(login, password)){
             Session.getInstance().getViewFactory().showClientWindow();
         }else{
             System.out.println("too bad doog");

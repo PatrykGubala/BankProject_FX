@@ -58,5 +58,16 @@
             </HBox>
          </children>
       </VBox>
+      <VBox layoutX="386.0" layoutY="334.0" prefHeight="68.0" prefWidth="250.0">
+         <children>
+            <HBox prefHeight="35.0" prefWidth="250.0">
+               <children>
+                  <TextField fx:id="amountAddCardField" prefHeight="25.0" prefWidth="275.0" />
+                  <ChoiceBox fx:id="currencyChoiceAddCardField" onMouseClicked="#onChoiceCurrencyComboBoxClicked" prefWidth="150.0" />
+               </children>
+            </HBox>
+            <Button fx:id="addCardButton" mnemonicParsing="false" onMouseClicked="#onAddCardButtonClicked" prefHeight="25.0" prefWidth="289.0" text="Dodaj kartę" />
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

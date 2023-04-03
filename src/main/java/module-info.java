@@ -16,7 +16,9 @@ module com.example.bankproject_fx {
     opens com.example.bankproject_fx.controllers to javafx.fxml;
     opens com.example.bankproject_fx.Styles to javafx.fxml;
     opens com.example.bankproject_fx.dao to javafx.fxml;
+    opens com.example.bankproject_fx.views to javafx.fxml;
     exports com.example.bankproject_fx;
+    exports com.example.bankproject_fx.views;
     exports com.example.bankproject_fx.controllers;
     exports com.example.bankproject_fx.model;
     exports com.example.bankproject_fx.dao;

@@ -4,17 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7524edd0-dd09-47f1-aa51-03850f176d07" name="Changes" comment="added transaction list visualisation, not connected to user">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/views/CurrentChoice.java" afterDir="false" />
+    <list default="true" id="7524edd0-dd09-47f1-aa51-03850f176d07" name="Changes" comment="added correct version of changing scenes in customer">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/model/BankCard2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/model/BankUser2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/views/AlertHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/ClientController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/ClientMainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/ClientMainPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/DashboardMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/DashboardMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/dao/BankDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/dao/BankDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/model/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/model/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/views/ViewFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/views/ViewFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/ClientMainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/ClientMainPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/register.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +121,8 @@
       <workItem from="1679554432760" duration="9064000" />
       <workItem from="1679670942376" duration="29943000" />
       <workItem from="1679857504447" duration="2696000" />
-      <workItem from="1680166350413" duration="13106000" />
+      <workItem from="1680166350413" duration="44737000" />
+      <workItem from="1680526249386" duration="5312000" />
     </task>
     <task id="LOCAL-00001" summary="Added few things, code compiles">
       <created>1679463665320</created>
@@ -149,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679888497555</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added correct version of changing scenes in customer">
+      <created>1680242028166</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680242028166</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,7 +180,8 @@
     <MESSAGE value="Added few things, code compiles" />
     <MESSAGE value="Next update, lacking docker-compose.yml, Session class added" />
     <MESSAGE value="added transaction list visualisation, not connected to user" />
-    <option name="LAST_COMMIT_MESSAGE" value="added transaction list visualisation, not connected to user" />
+    <MESSAGE value="added correct version of changing scenes in customer" />
+    <option name="LAST_COMMIT_MESSAGE" value="added correct version of changing scenes in customer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
