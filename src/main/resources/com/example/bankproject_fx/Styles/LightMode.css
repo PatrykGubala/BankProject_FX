@@ -1,0 +1,207 @@
+.client {
+    -fx-background-color: #47474b;
+    -fx-text-fill: #ffffff;
+
+}
+
+.client-menu-item {
+    -fx-background-color: #1e1d1d;
+    -fx-text-fill: #56565b;
+    -fx-font-size: 14px;
+    -fx-padding: 0px;
+    -fx-cursor: HAND;
+}
+.client-secondary{
+    -fx-background-color: #016064;
+
+}
+
+
+.client-inputbox {
+    -fx-background-color: transparent;
+    -fx-border-color: #016064;
+    -fx-border-width: 0 0 2 0;
+}
+
+.client-menu-item:hover {
+    -fx-text-fill: #FFF;
+    -fx-background-color: #2a2a2a;
+
+}
+
+.client-logout {
+    -fx-background-color: #6A0000;
+    -fx-text-fill: #56565b;
+
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER;
+    -fx-cursor: HAND;
+    -fx-border-width: 0 0 2 0;
+
+}
+
+.client-text {
+    -fx-font-size: 14px;
+    -fx-text-fill: #FFF;
+}
+
+.client-logout:hover {
+    -fx-background-color: #a90202;
+    -fx-text-fill: #FFF;
+}
+
+
+.sidebar {
+    -fx-background-color: #fff;
+    -fx-text-fill: #000;
+    -fx-pref-width: 150px;
+
+}
+
+.sidebar-menu-item {
+    -fx-background-color: transparent;
+    -fx-text-fill: #56565b;
+    -fx-font-size: 14px;
+    -fx-padding: 0px;
+    -fx-cursor: HAND;
+}
+
+.sidebar-menu-item:hover {
+    -fx-text-fill: #FFF;
+    -fx-background-color: #2a2a2a;
+
+}
+
+.sidebar-logout {
+    -fx-background-color: #690000;
+    -fx-text-fill: #56565b;
+
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER;
+    -fx-cursor: HAND;
+    -fx-border-width: 0 0 2 0;
+
+}
+
+.sidebar-logout:hover {
+    -fx-background-color: #a90202;
+    -fx-text-fill: #FFF;
+}
+
+
+
+.login {
+    -fx-background-color: #ffffee;
+    -fx-text-fill: #000;
+
+}
+
+.login-menu-item {
+    -fx-background-color: #56565b;
+    -fx-text-fill: #1e1d1d;
+    -fx-font-size: 14px;
+    -fx-padding: 0px;
+    -fx-cursor: HAND;
+}
+.login-secondary{
+    -fx-background-color: #016064;
+
+}
+
+
+.login-inputbox {
+    -fx-background-color: transparent;
+    -fx-border-color: #016064;
+    -fx-border-width: 0 0 2 0;
+}
+
+.login-menu-item:hover {
+    -fx-text-fill: #000;
+    -fx-background-color: #2a2a2a;
+
+}
+
+.login-logout {
+    -fx-background-color: #690000;
+    -fx-text-fill: #56565b;
+
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER;
+    -fx-cursor: HAND;
+    -fx-border-width: 0 0 2 0;
+
+}
+
+.login-logout:hover {
+    -fx-background-color: #a90202;
+    -fx-text-fill: #000;
+}
+
+
+
+.register {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+
+}
+
+.register-menu-item {
+    -fx-background-color: #1e1d1d;
+    -fx-text-fill: #56565b;
+    -fx-font-size: 14px;
+    -fx-padding: 0px;
+    -fx-cursor: HAND;
+}
+.register-secondary{
+    -fx-background-color: #016064;
+
+}
+
+
+.register-inputbox {
+    -fx-background-color: transparent;
+    -fx-border-color: #016064;
+    -fx-border-width: 0 0 2 0;
+}
+
+.register-menu-item:hover {
+    -fx-text-fill: #000;
+    -fx-background-color: #2a2a2a;
+
+}
+.register_font_icon {
+
+    -fx-font-family: "Ikonli";
+    -fx-font-size: 16px; /* rozmiar ikon */
+    -fx-fill: #111111; /* kolor ikon */
+}
+
+.register-logout {
+    -fx-background-color: #6A0000;
+    -fx-text-fill: #56565b;
+
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER;
+    -fx-cursor: HAND;
+    -fx-border-width: 0 0 2 0;
+
+}
+
+.sidebar-logout:hover {
+    -fx-background-color: #a90202;
+    -fx-text-fill: #000;
+}
+
+
+.credit-card {
+    -fx-font-family: monospace;
+    -fx-background-color: #8f2727; /* Replace with your desired color */
+    -fx-background-radius: 15px;
+    -fx-padding: 0px;
+}
+
+/* Style the text on the credit card */
+.credit-card-text {
+    -fx-text-fill: #a8a7a7; /* Replace with your desired color */
+    -fx-effect: dropshadow( one-pass-box , #000 , 1 , 1 , 0 , 0 );
+}

@@ -1,0 +1,12 @@
+.credit-card {
+    -fx-font-family: monospace;
+    -fx-background-color: #8f2727; /* Replace with your desired color */
+    -fx-background-radius: 15px;
+    -fx-padding: 0px;
+}
+
+/* Style the text on the credit card */
+.credit-card-text {
+    -fx-text-fill: #a8a7a7; /* Replace with your desired color */
+    -fx-effect: dropshadow( one-pass-box , #000 , 1 , 1 , 0 , 0 );
+}

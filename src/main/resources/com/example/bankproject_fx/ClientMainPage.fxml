@@ -9,64 +9,100 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bankproject_fx.controllers.ClientMainPageController">
+<AnchorPane fx:id="mainWindow" prefHeight="600.0" prefWidth="650.0" styleClass="client" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bankproject_fx.controllers.ClientMainPageController">
    <children>
-      <VBox layoutX="386.0" layoutY="14.0" prefHeight="200.0" prefWidth="250.0" styleClass="new_trans_container">
+      <VBox layoutX="372.0" layoutY="14.0" prefHeight="232.0" prefWidth="264.0" styleClass="new_trans_container">
          <children>
-            <Label text="Wybór karty:" />
-            <ComboBox fx:id="cardChoiceComboBox" onMouseClicked="#onChoiceCardComboBoxClicked" prefHeight="25.0" prefWidth="252.0" />
-            <Label text="Nr konta odbiorcy:" />
-            <TextField fx:id="accountAdressNumber" />
-            <Label text="Kwota:" />
+            <Label styleClass="client-text" text="Transfer środków na inne konto">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label styleClass="client-text" text="Nr konta odbiorcy:" />
+            <TextField fx:id="accountAdressNumber" styleClass="client-inputbox" />
+            <Label styleClass="client-text" text="Kwota:" />
             <HBox prefHeight="33.0" prefWidth="250.0">
                <children>
-                  <TextField fx:id="amountField" prefHeight="25.0" prefWidth="275.0" />
-                  <ChoiceBox fx:id="currencyChoiceField" onMouseClicked="#onChoiceCurrencyComboBoxClicked" prefWidth="150.0" />
+                  <TextField fx:id="amountField" prefHeight="25.0" prefWidth="91.0" styleClass="client-inputbox" />
+                  <ChoiceBox fx:id="currencyChoiceField" onMouseClicked="#onChoiceCurrencyComboBoxClicked" prefHeight="25.0" prefWidth="51.0" />
+                  <Label fx:id="transferAmountInPLNLabel" />
+                  <Label styleClass="client-text" text="PLN" />
                </children>
             </HBox>
-            <Label text="Wiadomość:" />
-            <TextArea fx:id="messageField" prefHeight="25.0" prefWidth="279.0" />
-            <Button fx:id="sendMoneyButton" mnemonicParsing="false" onMouseClicked="#onSendButtonClicked" text="Wyślij" />
+            <Label styleClass="client-text" text="Wiadomość:" />
+            <TextArea fx:id="messageField" prefHeight="25.0" prefWidth="279.0" styleClass="client-inputbox" />
+            <Label fx:id="transferErrorLabel" styleClass="client-text" />
+            <Button fx:id="sendMoneyButton" mnemonicParsing="false" onMouseClicked="#onSendButtonClicked" prefHeight="31.0" prefWidth="89.0" styleClass="client-menu-item" text="Wyślij" />
          </children>
       </VBox>
       <VBox layoutX="24.0" layoutY="24.0" prefHeight="273.0" prefWidth="198.0">
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label text="HI, " />
-                  <Label fx:id="hiLabel" />
+                  <Label styleClass="client-text" text="HI, " />
+                  <Label fx:id="hiLabel" styleClass="client-text" />
                </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label text="Name: " />
-                  <Label fx:id="nameLabel" />
+                  <Label styleClass="client-text" text="Name: " />
+                  <Label fx:id="nameLabel" styleClass="client-text" />
                </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label text="Money:" />
-                  <Label fx:id="moneyLabel" />
+                  <Label styleClass="client-text" text="Money:" />
+                  <Label fx:id="moneyLabel" styleClass="client-text" />
                </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label text="Email:" />
-                  <Label fx:id="emailLabel" />
+                  <Label styleClass="client-text" text="Email:" />
+                  <Label fx:id="emailLabel" styleClass="client-text" />
                </children>
             </HBox>
          </children>
       </VBox>
-      <VBox layoutX="386.0" layoutY="334.0" prefHeight="68.0" prefWidth="250.0">
+      <VBox layoutX="372.0" layoutY="334.0" prefHeight="77.0" prefWidth="264.0">
          <children>
+            <Label prefHeight="17.0" prefWidth="245.0" styleClass="client-text" text="Dodawanie kart">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
             <HBox prefHeight="35.0" prefWidth="250.0">
                <children>
-                  <TextField fx:id="amountAddCardField" prefHeight="25.0" prefWidth="275.0" />
+                  <TextField fx:id="amountAddCardField" prefHeight="25.0" prefWidth="275.0" styleClass="client-inputbox" />
                   <ChoiceBox fx:id="currencyChoiceAddCardField" onMouseClicked="#onChoiceCurrencyComboBoxClicked" prefWidth="150.0" />
                </children>
             </HBox>
-            <Button fx:id="addCardButton" mnemonicParsing="false" onMouseClicked="#onAddCardButtonClicked" prefHeight="25.0" prefWidth="289.0" text="Dodaj kartę" />
+            <Button fx:id="addCardButton" mnemonicParsing="false" onMouseClicked="#onAddCardButtonClicked" prefHeight="25.0" prefWidth="289.0" styleClass="client-menu-item" text="Dodaj kartę" />
+         </children>
+      </VBox>
+      <VBox layoutX="372.0" layoutY="443.0" prefHeight="153.0" prefWidth="264.0">
+         <children>
+            <Label fx:id="currencyTopUpLabel" prefHeight="17.0" prefWidth="245.0" styleClass="client-text" text="Doładowanie karty">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="35.0" prefWidth="250.0">
+               <children>
+                  <ComboBox fx:id="cardChoiceTopUpComboBox" onMouseClicked="#onChoiceCardComboBoxClicked" prefHeight="25.0" prefWidth="219.0" />
+                  <Label fx:id="choosenCardCurrency" />
+               </children>
+            </HBox>
+            <Label styleClass="client-text" text="Kwota:" />
+            <HBox prefHeight="39.0" prefWidth="264.0">
+               <children>
+                  <TextField fx:id="amountTopUpCardField" prefHeight="25.0" prefWidth="139.0" styleClass="client-inputbox" />
+                  <Label fx:id="topUpCardInPLN" />
+                  <Label styleClass="client-text" text="PLN" />
+               </children>
+            </HBox>
+            <Button fx:id="TopUpCardButton" mnemonicParsing="false" onMouseClicked="#onTopUpCardButtonClicked" prefHeight="42.0" prefWidth="264.0" styleClass="client-menu-item" text="Doładuj" />
          </children>
       </VBox>
    </children>

@@ -4,7 +4,8 @@ import com.example.bankproject_fx.dao.BankDatabase;
 import com.example.bankproject_fx.views.CurrentChoice;
 import com.example.bankproject_fx.views.Mode;
 import com.example.bankproject_fx.views.ViewFactory;
-import javafx.beans.property.ObjectProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -13,7 +14,7 @@ import java.util.Map;
 
 public class Session {
     private static Session instance;
-    private BankUser bankUser;
+
     private BankUser2 bankUser2;
     private final ViewFactory viewFactory;
     private BankDatabase bankDatabase;
@@ -24,6 +25,16 @@ public class Session {
 
     private CurrentChoice currentChoice;
 
+    private ObservableList<String> allCurrenciesAvailable = FXCollections.observableArrayList("PLN", "EUR", "YEN", "USD");
+
+    public ObservableList<String> getAllCurrenciesAvailable() {
+        return allCurrenciesAvailable;
+    }
+
+    public void setAllCurrenciesAvailable(ObservableList<String> allCurrenciesAvailable) {
+        this.allCurrenciesAvailable = allCurrenciesAvailable;
+    }
+
     public Mode getChoosenMode() {
         return choosenMode;
     }
@@ -32,6 +43,7 @@ public class Session {
         this.choosenMode = choosenMode;
     }
     private final Map<String, Double> exchangeRates;
+    private final Map<String, Double> betterExchangeRates;
 
 
     private Session() {
@@ -45,6 +57,18 @@ public class Session {
         exchangeRates.put("GBP", 5.5);
         exchangeRates.put("YEN", 100.0);
 
+        betterExchangeRates = new HashMap<>();
+
+        betterExchangeRates.put("PLN", 1.0);
+        betterExchangeRates.put("USD", 4.0);
+        betterExchangeRates.put("EUR", 4.5);
+        betterExchangeRates.put("GBP", 5.0);
+        betterExchangeRates.put("YEN", 90.0);
+
+    }
+
+    public Map<String, Double> getBetterExchangeRates() {
+        return betterExchangeRates;
     }
 
     public Map<String, Double> getExchangeRates() {
@@ -65,17 +89,11 @@ public class Session {
         return viewFactory;
     }
 
-    public BankUser getBankUser() {
-        return bankUser;
-    }
 
-    public void setBankUser(BankUser bankUser) {
-        this.bankUser = bankUser;
-    }
 
-    public void clear() {
-        bankUser = null;
-    }
+
+
+
 
     public void setBankUser2(BankUser2 bankUser2) {
         this.bankUser2 = bankUser2;

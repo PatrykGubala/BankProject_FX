@@ -4,19 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7524edd0-dd09-47f1-aa51-03850f176d07" name="Changes" comment="added correct version of changing scenes in customer">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/model/BankCard2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/model/BankUser2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/views/AlertHelper.java" afterDir="false" />
+    <list default="true" id="7524edd0-dd09-47f1-aa51-03850f176d07" name="Changes" comment="version in progress - doesnt compile, working on updating bankUsers after receiving money">
+      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/AppController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/YourCardsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/YourCardsPageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/YourCardsRecordController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/views/CurrentWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/views/YourCardsRecordFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/Styles/DarkMode.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/Styles/LightMode.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/Styles/yourCardsRecord.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/YourCards.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/YourCardsPage.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/YourCardsRecord.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/BankCustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/ClientController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/ClientMainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/ClientMainPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/DashboardMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/DashboardMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/TransactionsPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/controllers/TransactionsPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/dao/BankDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/dao/BankDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/dao/JdbcDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/model/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/model/BankUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/model/BankUsers.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/model/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/model/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/views/CurrentChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/views/CurrentChoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/views/ViewFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankproject_fx/views/ViewFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/ClientMainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/ClientMainPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/DashboardMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/DashboardMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/Styles/lightSwitchIcon.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/Styles/loginLightMode.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/Styles/registerDarkMode.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/Styles/registerLightMode.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/bankCustomer.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankproject_fx/Register.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,15 +55,21 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="FxmlFile" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/18.0.2/javafx-controls-18.0.2-win.jar!/javafx/scene/control/Control.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/18.0.2/javafx-controls-18.0.2-win.jar!/javafx/scene/control/TextField.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/18.0.2/javafx-controls-18.0.2-win.jar!/javafx/scene/control/TextInputControl.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/18.0.2/javafx-graphics-18.0.2-win.jar!/javafx/scene/layout/Region.class" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -46,40 +81,45 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2NCbtG0tCYYR3JlhSYaYnftyH8Q" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Pobrane/maze-bank-main/maze-bank-main/pom.xml&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Java/JavaProjects/BankProject_FX/src/main/resources/com/example/bankproject_fx/Styles",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "aws",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.bankproject_fx.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Java\JavaProjects\BankProject_FX\src\main\java\com\example\bankproject_fx\controllers" />
       <recent name="D:\Java\JavaProjects\BankProject_FX\src\main\resources\com\example\bankproject_fx\Styles" />
+      <recent name="D:\Java\JavaProjects\BankProject_FX" />
+      <recent name="D:\Java\JavaProjects\BankProject_FX\src\main\java\com\example\bankproject_fx\controllers" />
       <recent name="D:\Java\JavaProjects\BankProject_FX\src\main\resources\com\example\bankproject_fx" />
       <recent name="D:\Java\JavaProjects\BankProject_FX\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Java\JavaProjects\BankProject_FX\src\main\resources\com\example\bankproject_fx\Styles" />
       <recent name="D:\Java\JavaProjects\BankProject_FX\src\main\resources\com\example\bankproject_fx" />
+      <recent name="D:\Java\JavaProjects\BankProject_FX\src\main\resources\com\example\bankproject_fx\Styles" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.bankproject_fx" />
@@ -122,7 +162,10 @@
       <workItem from="1679670942376" duration="29943000" />
       <workItem from="1679857504447" duration="2696000" />
       <workItem from="1680166350413" duration="44737000" />
-      <workItem from="1680526249386" duration="5312000" />
+      <workItem from="1680526249386" duration="50893000" />
+      <workItem from="1681544669268" duration="558000" />
+      <workItem from="1681545247604" duration="962000" />
+      <workItem from="1681546616884" duration="25753000" />
     </task>
     <task id="LOCAL-00001" summary="Added few things, code compiles">
       <created>1679463665320</created>
@@ -159,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680242028166</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="version in progress - doesnt compile, working on updating bankUsers after receiving money">
+      <created>1680551798554</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1680551798554</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,7 +231,8 @@
     <MESSAGE value="Next update, lacking docker-compose.yml, Session class added" />
     <MESSAGE value="added transaction list visualisation, not connected to user" />
     <MESSAGE value="added correct version of changing scenes in customer" />
-    <option name="LAST_COMMIT_MESSAGE" value="added correct version of changing scenes in customer" />
+    <MESSAGE value="version in progress - doesnt compile, working on updating bankUsers after receiving money" />
+    <option name="LAST_COMMIT_MESSAGE" value="version in progress - doesnt compile, working on updating bankUsers after receiving money" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -193,5 +244,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -1,6 +1,7 @@
 package com.example.bankproject_fx.views;
 
 import com.example.bankproject_fx.HelloApplication;
+import com.example.bankproject_fx.model.Session;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXMLLoader;
@@ -12,13 +13,39 @@ public class ViewFactory {
 
 
     private final ObjectProperty<CurrentChoice> currentChoice;
+    private final ObjectProperty<CurrentWindow> currentWindow;
+
+
+
+
+    String darkModeCss = getClass().getResource("/com/example/bankproject_fx/Styles/DarkMode.css").toExternalForm();
+    String lightModeCss = getClass().getResource("/com/example/bankproject_fx/Styles/LightMode.css").toExternalForm();
+
 
     private AnchorPane dashboardView;
     private AnchorPane transactionsView;
+    private AnchorPane yourCardsView;
     private AnchorPane accountsView;
+    private AnchorPane clientWindowView;
+    private AnchorPane loginWindowView;
+    private AnchorPane registerWindowView;
+
+    private AnchorPane mainWindow;
+
+    private Mode choosenMode;
+
+
+    public AnchorPane getMainWindow() {
+        return mainWindow;
+    }
+
+    public void setMainWindow(AnchorPane mainWindow) {
+        this.mainWindow = mainWindow;
+    }
 
     public ViewFactory() {
         this.currentChoice = new SimpleObjectProperty<>();
+        this.currentWindow = new SimpleObjectProperty<>();
     }
 
 
@@ -27,20 +54,60 @@ public class ViewFactory {
         return currentChoice;
     }
 
+    public ObjectProperty<CurrentWindow> getCurrentWindowProperty() {
+        return currentWindow;
+    }
+
+    public void setCurrentWindow(CurrentWindow currentWindow) {
+        this.currentWindow.set(currentWindow);
+    }
+
     public void setCurrentChoice(CurrentChoice currentChoice) {
         this.currentChoice.set(currentChoice);
     }
 
-    public void showLoginWindow(){
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
+    public void showAppWindow(){
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("App.fxml"));
         createStage(fxmlLoader);
+                //loginWindowView = fxmlLoader.load();
+
+
+
     }
 
-    public void showClientWindow(){
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Client.fxml"));
 
-        createStage(fxmlLoader);
+    public AnchorPane getClientWindow() {
+        if (clientWindowView == null) {
+            try {
+                clientWindowView = new FXMLLoader(HelloApplication.class.getResource("Client.fxml")).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return clientWindowView;
+    }
 
+    public AnchorPane getLoginWindow() {
+        if (loginWindowView == null) {
+            try {
+                loginWindowView = new FXMLLoader(HelloApplication.class.getResource("Login.fxml")).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return loginWindowView;
+    }
+
+    public AnchorPane getRegisterWindow() {
+        if (registerWindowView == null) {
+            try {
+                registerWindowView = new FXMLLoader(HelloApplication.class.getResource("Register.fxml")).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return registerWindowView;
     }
 
 
@@ -53,6 +120,16 @@ public class ViewFactory {
             }
         }
         return dashboardView;
+    }
+    public AnchorPane getYourCardsView() {
+        if (yourCardsView == null) {
+            try {
+                yourCardsView = new FXMLLoader(HelloApplication.class.getResource("YourCardsPage.fxml")).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return yourCardsView;
     }
 
     public AnchorPane getTransactionsView() {
@@ -78,7 +155,7 @@ public class ViewFactory {
     }
 
     public void showRegisterWindow(){
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("register.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Register.fxml"));
 
         createStage(fxmlLoader);
 
@@ -106,6 +183,47 @@ public class ViewFactory {
         stage.close();
 
     }
+    public void changeMode(){
+        if(Session.getInstance().getChoosenMode().equals(Mode.light)){
+            getDashboardView().getStylesheets().clear();
+            getDashboardView().getStylesheets().add(darkModeCss);
+            getEditView().getStylesheets().clear();
+            getEditView().getStylesheets().add(darkModeCss);
+            getClientWindow().getStylesheets().clear();
+            getClientWindow().getStylesheets().add(darkModeCss);
+            getRegisterWindow().getStylesheets().clear();
+            getRegisterWindow().getStylesheets().add(darkModeCss);
+            getLoginWindow().getStylesheets().clear();
+            getLoginWindow().getStylesheets().add(darkModeCss);
+            getTransactionsView().getStylesheets().clear();
+            getTransactionsView().getStylesheets().add(darkModeCss);
+            Session.getInstance().setChoosenMode(Mode.dark);
+        }
+        else{
+            getDashboardView().getStylesheets().clear();
+            getDashboardView().getStylesheets().add(lightModeCss);
+            getEditView().getStylesheets().clear();
+            getEditView().getStylesheets().add(lightModeCss);
+            getClientWindow().getStylesheets().clear();
+            getClientWindow().getStylesheets().add(lightModeCss);
+            getRegisterWindow().getStylesheets().clear();
+            getRegisterWindow().getStylesheets().add(lightModeCss);
+            getLoginWindow().getStylesheets().clear();
+            getLoginWindow().getStylesheets().add(lightModeCss);
+            getTransactionsView().getStylesheets().clear();
+            getTransactionsView().getStylesheets().add(lightModeCss);
+            Session.getInstance().setChoosenMode(Mode.light);
+        }
+
+    }
+
+
+
+
+
+
+
+
 
 
 }

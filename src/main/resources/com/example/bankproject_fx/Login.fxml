@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane fx:id="mainWindowAnchorPaneId" prefHeight="600.0" prefWidth="800.0" styleClass="login" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bankproject_fx.controllers.LoginController">
+    <children>
+        <Pane prefHeight="600.0" prefWidth="240.0" styleClass="login-secondary">
+         <children>
+            <Button fx:id="lightSwitch" layoutX="30.0" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#onLightSwitch" styleClass="fourth">
+               <graphic>
+                  <FontIcon iconLiteral="cil-moon" iconSize="32" styleClass="register_font_icon" />
+               </graphic>
+            </Button>
+         </children></Pane>
+        <PasswordField fx:id="passwordField" alignment="BASELINE_LEFT" layoutX="394.0" layoutY="265.0" prefHeight="35.0" prefWidth="290.0" promptText="Password:" styleClass="login-inputbox">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </PasswordField>
+        <Button fx:id="signInButton" layoutX="400.0" layoutY="329.0" mnemonicParsing="false" onMouseClicked="#signInUser" prefHeight="35.0" prefWidth="139.0" styleClass="login-menu-item" text="Sign in" textOverrun="LEADING_ELLIPSIS">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="signUpButton" layoutX="558.0" layoutY="329.0" mnemonicParsing="false" onMouseClicked="#signUpUser" prefHeight="35.0" prefWidth="131.0" styleClass="login-menu-item" text="Sign Up" textOverrun="LEADING_ELLIPSIS">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Button>
+        <TextField fx:id="loginField" layoutX="394.0" layoutY="216.0" prefHeight="35.0" prefWidth="290.0" promptText="Login: " styleClass="login-inputbox">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label fx:id="errorLabel" layoutX="399.0" layoutY="206.0" textFill="#9a1a04">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

@@ -7,33 +7,34 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="150.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bankproject_fx.controllers.DashboardMenuController">
+<AnchorPane fx:id="mainWindow" prefHeight="600.0" prefWidth="150.0" styleClass="sidebar" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bankproject_fx.controllers.DashboardMenuController">
    <children>
-      <VBox layoutY="84.0" prefHeight="417.0" prefWidth="150.0">
+      <VBox layoutY="84.0" prefHeight="403.0" prefWidth="150.0">
          <children>
-            <Button fx:id="dashboardButton" mnemonicParsing="false" onMouseClicked="#onDashboardButtonClicked" prefHeight="50.0" prefWidth="150.0" text="Menu główne">
+            <Button fx:id="dashboardButton" mnemonicParsing="false" onMouseClicked="#onDashboardButtonClicked" prefHeight="50.0" prefWidth="150.0" styleClass="sidebar-menu-item" text="Menu główne">
                <VBox.margin>
                   <Insets bottom="20.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="accountInformationButton" mnemonicParsing="false" onMouseClicked="#onAccountInformationButtonClicked" prefHeight="50.0" prefWidth="150.0" text="Profil">
+            <Button fx:id="accountInformationButton" mnemonicParsing="false" onMouseClicked="#onAccountInformationButtonClicked" prefHeight="50.0" prefWidth="150.0" styleClass="sidebar-menu-item" text="Profil">
                <VBox.margin>
                   <Insets bottom="20.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="historyButton" mnemonicParsing="false" onMouseClicked="#onHistoryButtonClicked" prefHeight="50.0" prefWidth="150.0" text="Historia transakcji">
+            <Button fx:id="historyButton" mnemonicParsing="false" onMouseClicked="#onHistoryButtonClicked" prefHeight="50.0" prefWidth="150.0" styleClass="sidebar-menu-item" text="Historia transakcji">
                <VBox.margin>
                   <Insets bottom="20.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="yourAccountsButton" mnemonicParsing="false" onMouseClicked="#onYourAccountsButtonClicked" prefHeight="50.0" prefWidth="150.0" text="Twoje konta">
+            <Button fx:id="yourAccountsButton" mnemonicParsing="false" onMouseClicked="#onYourAccountsButtonClicked" prefHeight="50.0" prefWidth="150.0" styleClass="sidebar-menu-item" text="Twoje konta">
                <VBox.margin>
                   <Insets bottom="20.0" />
                </VBox.margin>
             </Button>
+            <Button fx:id="changeModeButton" mnemonicParsing="false" onMouseClicked="#onChangeModeButtonClicked" prefHeight="50.0" prefWidth="150.0" styleClass="sidebar-menu-item" text="Change Mode" />
          </children>
       </VBox>
-      <Button fx:id="logoutButton" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#onLogoutButtonClicked" prefHeight="50.0" prefWidth="150.0" text="Wyloguj" />
+      <Button fx:id="logoutButton" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#onLogoutButtonClicked" prefHeight="50.0" prefWidth="150.0" styleClass="sidebar-logout" text="Wyloguj" />
       <Text layoutX="40.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BANK" wrappingWidth="70.556640625">
          <font>
             <Font size="24.0" />

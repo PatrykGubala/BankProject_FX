@@ -2,6 +2,7 @@ package com.example.bankproject_fx.controllers;
 
 
 import com.example.bankproject_fx.model.BankTransaction;
+import com.example.bankproject_fx.model.Session;
 import com.example.bankproject_fx.views.TransactionsCellFactory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,7 +18,7 @@ import java.util.ResourceBundle;
 public class TransactionsPageController implements Initializable {
     @FXML
     private ListView<BankTransaction> listView ;
-    String [] items2 = {"123", "213", "321"};
+
 
     private ObservableList<String> transactions = FXCollections.observableArrayList();
 
@@ -26,12 +27,12 @@ public class TransactionsPageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        ObservableList<String> items =FXCollections.observableArrayList (
-                "Single", "Double", "Suite", "Family App");
 
         //listView.getItems().addAll(items2);
 
         List<BankTransaction> transactionList = new ArrayList<>();
+
+
         transactionList.add(new BankTransaction("2022-01-01", "Salary", "disua","2fdsa",5000.00));
         transactionList.add(new BankTransaction("2022bvcx1-01", "Safsady", "dfgasua","2fbvxcsa",50030.00));
 
