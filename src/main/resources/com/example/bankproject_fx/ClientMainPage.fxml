@@ -26,9 +26,10 @@
             <HBox prefHeight="33.0" prefWidth="250.0">
                <children>
                   <TextField fx:id="amountField" prefHeight="25.0" prefWidth="91.0" styleClass="client-inputbox" />
-                  <ChoiceBox fx:id="currencyChoiceField" onMouseClicked="#onChoiceCurrencyComboBoxClicked" prefHeight="25.0" prefWidth="51.0" />
-                  <Label fx:id="transferAmountInPLNLabel" />
                   <Label styleClass="client-text" text="PLN" />
+                  <ChoiceBox fx:id="currencyChoiceField" onMouseClicked="#onChoiceCurrencyComboBoxClicked" prefHeight="25.0" prefWidth="51.0" />
+                  <Label fx:id="transferAmountInPLNLabel" styleClass="client-text" />
+                  <Label fx:id="transferAmountInPLNCurrencyLabel" styleClass="client-text" />
                </children>
             </HBox>
             <Label styleClass="client-text" text="Wiadomość:" />
@@ -74,8 +75,9 @@
             </Label>
             <HBox prefHeight="35.0" prefWidth="250.0">
                <children>
-                  <TextField fx:id="amountAddCardField" prefHeight="25.0" prefWidth="275.0" styleClass="client-inputbox" />
-                  <ChoiceBox fx:id="currencyChoiceAddCardField" onMouseClicked="#onChoiceCurrencyComboBoxClicked" prefWidth="150.0" />
+                  <TextField fx:id="amountAddCardField" prefHeight="25.0" prefWidth="169.0" styleClass="client-inputbox" />
+                  <Label styleClass="client-text" text="PLN" />
+                  <ChoiceBox fx:id="currencyChoiceAddCardField" onMouseClicked="#onChoiceCurrencyComboBoxClicked" prefHeight="25.0" prefWidth="71.0" />
                </children>
             </HBox>
             <Button fx:id="addCardButton" mnemonicParsing="false" onMouseClicked="#onAddCardButtonClicked" prefHeight="25.0" prefWidth="289.0" styleClass="client-menu-item" text="Dodaj kartę" />
@@ -91,19 +93,21 @@
             <HBox prefHeight="35.0" prefWidth="250.0">
                <children>
                   <ComboBox fx:id="cardChoiceTopUpComboBox" onMouseClicked="#onChoiceCardComboBoxClicked" prefHeight="25.0" prefWidth="219.0" />
-                  <Label fx:id="choosenCardCurrency" />
+                  <Label fx:id="choosenCardCurrency" styleClass="client-text" />
                </children>
             </HBox>
             <Label styleClass="client-text" text="Kwota:" />
             <HBox prefHeight="39.0" prefWidth="264.0">
                <children>
                   <TextField fx:id="amountTopUpCardField" prefHeight="25.0" prefWidth="139.0" styleClass="client-inputbox" />
-                  <Label fx:id="topUpCardInPLN" />
                   <Label styleClass="client-text" text="PLN" />
+                  <Label fx:id="topUpCardInPLN" styleClass="client-text" />
+                  <Label fx:id="topUpCardInPLNCurrency" styleClass="client-text" />
                </children>
             </HBox>
             <Button fx:id="TopUpCardButton" mnemonicParsing="false" onMouseClicked="#onTopUpCardButtonClicked" prefHeight="42.0" prefWidth="264.0" styleClass="client-menu-item" text="Doładuj" />
          </children>
       </VBox>
+      <Button fx:id="refreshButton" layoutX="85.0" layoutY="534.0" mnemonicParsing="false" onMouseClicked="#onRefreshButtonClicked" prefHeight="25.0" prefWidth="104.0" styleClass="client-menu-item" text="Refresh" />
    </children>
 </AnchorPane>

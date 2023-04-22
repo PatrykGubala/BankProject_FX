@@ -2,6 +2,8 @@ package com.example.bankproject_fx.dao;
 
 import com.example.bankproject_fx.model.*;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,20 +43,28 @@ public class BankDatabase {
     public boolean addBankAccount2(BankUser2 bankUser) {
         try (Connection conn = DriverManager
                 .getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD)){
-            PreparedStatement stmt = conn.prepareStatement(INSERT_BANK_ACCOUNT_2_QUERY);
-            stmt.setString(1, bankUser.getFirst_name());
-            stmt.setString(2, bankUser.getLast_name());
-            stmt.setString(3, bankUser.getEmail());
-            stmt.setString(4, bankUser.getPassword());
-            stmt.setString(5, bankUser.getPhone_number());
-            stmt.setString(6, bankUser.getStreet());
-            stmt.setString(7, bankUser.getCity());
-            stmt.setString(8, bankUser.getZip_code());
-            stmt.setString(9, bankUser.getCustomer_birth_date());
-            stmt.setDouble(10, bankUser.getBalance());
-            stmt.executeUpdate();
-            stmt.close();
-            return true;
+            try{
+                String hashedPassword = hashPassword(bankUser.getPassword());
+                PreparedStatement stmt = conn.prepareStatement(INSERT_BANK_ACCOUNT_2_QUERY);
+                stmt.setString(1, bankUser.getFirst_name());
+                stmt.setString(2, bankUser.getLast_name());
+                stmt.setString(3, bankUser.getEmail());
+                stmt.setString(4, hashedPassword);
+                stmt.setString(5, bankUser.getPhone_number());
+                stmt.setString(6, bankUser.getStreet());
+                stmt.setString(7, bankUser.getCity());
+                stmt.setString(8, bankUser.getZip_code());
+                stmt.setString(9, bankUser.getCustomer_birth_date());
+                stmt.setDouble(10, bankUser.getBalance());
+                stmt.executeUpdate();
+                stmt.close();
+                return true;
+            }
+            catch(NoSuchAlgorithmException e){
+                System.out.println("SQL error: " + e.getMessage());
+                return false;
+            }
+
         } catch (SQLException ex) {
             System.out.println("SQL error: " + ex.getMessage());
             return false;
@@ -82,6 +92,7 @@ public class BankDatabase {
                         rs.getString("customer_birth_date"),
                         rs.getDouble("balance")
                 );
+                bankUser.setBankCards(Session.getInstance().getBankDatabase().getBankCard2ByCustomerId(bankUser.getCustomer_id()));
                 rs.close();
                 stmt.close();
                 return bankUser;
@@ -244,30 +255,37 @@ public class BankDatabase {
         try (Connection conn = DriverManager
                 .getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD)){
             PreparedStatement stmt = conn.prepareStatement(SELECT_BANK_ACCOUNT_2_QUERY);
-            stmt.setString(1, login);
-            stmt.setString(2, password);
-            ResultSet rs = stmt.executeQuery();
-            if(rs.next()) {
+            try{
+                String hashedPassword = hashPassword(password);
+                stmt.setString(1, login);
+                stmt.setString(2, hashedPassword);
+                ResultSet rs = stmt.executeQuery();
+                if(rs.next()) {
 
-                BankUser2 bankUser2 = new BankUser2(
-                        rs.getString("customer_id"),
-                        rs.getString("first_name"),
-                        rs.getString("last_name"),
-                        rs.getString("email"),
-                        rs.getString("password"),
-                        rs.getString("phone_number"),
-                        rs.getString("street"),
-                        rs.getString("city"),
-                        rs.getString("zip_code"),
-                        rs.getString("customer_birth_date"),
-                        rs.getDouble("balance")
-                );
-                Session.getInstance().setBankUser2(bankUser2);
-                Session.getInstance().getBankUser2().setBankCards(getBankCard2ByCustomerId(bankUser2.getCustomer_id()));
-                rs.close();
-                stmt.close();
-                return true;
+                    BankUser2 bankUser2 = new BankUser2(
+                            rs.getString("customer_id"),
+                            rs.getString("first_name"),
+                            rs.getString("last_name"),
+                            rs.getString("email"),
+                            rs.getString("password"),
+                            rs.getString("phone_number"),
+                            rs.getString("street"),
+                            rs.getString("city"),
+                            rs.getString("zip_code"),
+                            rs.getString("customer_birth_date"),
+                            rs.getDouble("balance")
+                    );
+                    Session.getInstance().setBankUser2(bankUser2);
+                    Session.getInstance().getBankUser2().setBankCards(getBankCard2ByCustomerId(bankUser2.getCustomer_id()));
+                    rs.close();
+                    stmt.close();
+                    return true;
+                }
+            }catch(NoSuchAlgorithmException e){
+                System.out.println("SLQ error: " + e.getMessage());
+                return false;
             }
+
 
 
 
@@ -285,28 +303,16 @@ public class BankDatabase {
 
 
 
-    public boolean isPekaoAccountNumberValid(String accountNumber) {
-        // sprawdzenie długości numeru konta
-        if (accountNumber.length() != 26) {
-            return false;
+    public static String hashPassword(String password) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+        md.update(password.getBytes());
+        byte[] digest = md.digest();
+        StringBuilder sb = new StringBuilder();
+        for (byte b : digest) {
+            sb.append(String.format("%02x", b & 0xff));
         }
-
-        // sprawdzenie formatu numeru konta
-        if (!accountNumber.matches("[0-9]+")) {
-            return false;
-        }
-
-        // obliczenie sumy kontrolnej
-        String bankCode = "1240";
-        String accountCode = accountNumber.substring(2, 26);
-
-        String checkString = accountCode + bankCode + "00";
-        long checkValue = Long.parseLong(checkString) % 97;
-
-        // sprawdzenie sumy kontrolnej
-        return checkValue == 1;
+        return sb.toString();
     }
-
     public void updateBankUser2Balance(BankUser2 bankUser) {
         try (Connection conn = DriverManager
                 .getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD)){

@@ -20,6 +20,9 @@ public class YourCardsRecordController implements Initializable {
 
     @FXML
     private Label cardOwnerId;
+    @FXML
+    private Label cardAmmountId;
+
 
     @FXML
     private Label validThruId;
@@ -32,8 +35,9 @@ public class YourCardsRecordController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         cardCurrencyId.setText(bankCard2.getCurrency());
         cardNumberId.setText(bankCard2.getBank_card_number());
-        cardOwnerId.setText(Session.getInstance().getBankUser2().getFirst_name()+Session.getInstance().getBankUser2().getLast_name());
+        cardOwnerId.setText(Session.getInstance().getBankUser2().getFirst_name()+" "+Session.getInstance().getBankUser2().getLast_name());
         validThruId.setText(bankCard2.getExpiryDate());
+        cardAmmountId.setText(Double.toString(bankCard2.getBalance()));
 
     }
 

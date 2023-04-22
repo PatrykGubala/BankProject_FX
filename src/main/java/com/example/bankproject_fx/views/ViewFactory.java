@@ -81,6 +81,7 @@ public class ViewFactory {
         if (clientWindowView == null) {
             try {
                 clientWindowView = new FXMLLoader(HelloApplication.class.getResource("Client.fxml")).load();
+                getLightningMode(clientWindowView);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -92,6 +93,8 @@ public class ViewFactory {
         if (loginWindowView == null) {
             try {
                 loginWindowView = new FXMLLoader(HelloApplication.class.getResource("Login.fxml")).load();
+                getLightningMode(loginWindowView);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -103,6 +106,8 @@ public class ViewFactory {
         if (registerWindowView == null) {
             try {
                 registerWindowView = new FXMLLoader(HelloApplication.class.getResource("Register.fxml")).load();
+                getLightningMode(registerWindowView);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -115,6 +120,8 @@ public class ViewFactory {
         if (dashboardView == null) {
             try {
                 dashboardView = new FXMLLoader(HelloApplication.class.getResource("ClientMainPage.fxml")).load();
+                getLightningMode(dashboardView);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -125,6 +132,8 @@ public class ViewFactory {
         if (yourCardsView == null) {
             try {
                 yourCardsView = new FXMLLoader(HelloApplication.class.getResource("YourCardsPage.fxml")).load();
+                getLightningMode(yourCardsView);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -136,6 +145,8 @@ public class ViewFactory {
         if (transactionsView == null) {
             try {
                 transactionsView = new FXMLLoader(HelloApplication.class.getResource("TransactionsPage.fxml")).load();
+                getLightningMode(transactionsView);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -147,11 +158,22 @@ public class ViewFactory {
         if (dashboardView == null) {
             try {
                 dashboardView = new FXMLLoader(HelloApplication.class.getResource("ClientMainPage.fxml")).load();
+                getLightningMode(dashboardView);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
         return dashboardView;
+    }
+    public void getLightningMode(AnchorPane anchorpane) {
+        if (Session.getInstance().getChoosenMode().equals(Mode.light)) {
+            anchorpane.getStylesheets().clear();
+            anchorpane.getStylesheets().add(lightModeCss);
+        }
+        else if(Session.getInstance().getChoosenMode().equals(Mode.dark)){
+            anchorpane.getStylesheets().clear();
+            anchorpane.getStylesheets().add(darkModeCss);
+        }
     }
 
     public void showRegisterWindow(){
@@ -185,6 +207,7 @@ public class ViewFactory {
     }
     public void changeMode(){
         if(Session.getInstance().getChoosenMode().equals(Mode.light)){
+            Session.getInstance().setChoosenMode(Mode.dark);
             getDashboardView().getStylesheets().clear();
             getDashboardView().getStylesheets().add(darkModeCss);
             getEditView().getStylesheets().clear();
@@ -197,9 +220,12 @@ public class ViewFactory {
             getLoginWindow().getStylesheets().add(darkModeCss);
             getTransactionsView().getStylesheets().clear();
             getTransactionsView().getStylesheets().add(darkModeCss);
-            Session.getInstance().setChoosenMode(Mode.dark);
+            getYourCardsView().getStylesheets().clear();
+            getYourCardsView().getStylesheets().add(darkModeCss);
+
         }
         else{
+            Session.getInstance().setChoosenMode(Mode.light);
             getDashboardView().getStylesheets().clear();
             getDashboardView().getStylesheets().add(lightModeCss);
             getEditView().getStylesheets().clear();
@@ -212,7 +238,9 @@ public class ViewFactory {
             getLoginWindow().getStylesheets().add(lightModeCss);
             getTransactionsView().getStylesheets().clear();
             getTransactionsView().getStylesheets().add(lightModeCss);
-            Session.getInstance().setChoosenMode(Mode.light);
+            getYourCardsView().getStylesheets().clear();
+            getYourCardsView().getStylesheets().add(lightModeCss);
+
         }
 
     }

@@ -9,13 +9,14 @@ import javafx.collections.ObservableList;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
-public class Session {
+public class Session  {
     private static Session instance;
 
     private BankUser2 bankUser2;
+
+    public List<BankTransaction> transactionList = new ArrayList<>();
     private final ViewFactory viewFactory;
     private BankDatabase bankDatabase;
     private Mode choosenMode;
@@ -52,18 +53,18 @@ public class Session {
         choosenMode = Mode.light;
         exchangeRates = new HashMap<>();
         exchangeRates.put("PLN", 1.0);
-        exchangeRates.put("USD", 4.5);
-        exchangeRates.put("EUR", 5.0);
-        exchangeRates.put("GBP", 5.5);
-        exchangeRates.put("YEN", 100.0);
+        exchangeRates.put("USD", 0.25);
+        exchangeRates.put("EUR", 0.2);
+        exchangeRates.put("GBP", 0.15);
+        exchangeRates.put("YEN", 0.001);
 
         betterExchangeRates = new HashMap<>();
 
         betterExchangeRates.put("PLN", 1.0);
-        betterExchangeRates.put("USD", 4.0);
-        betterExchangeRates.put("EUR", 4.5);
-        betterExchangeRates.put("GBP", 5.0);
-        betterExchangeRates.put("YEN", 90.0);
+        betterExchangeRates.put("USD", 0.3);
+        betterExchangeRates.put("EUR", 0.25);
+        betterExchangeRates.put("GBP", 0.2);
+        betterExchangeRates.put("YEN", 0.0015);
 
     }
 
@@ -96,11 +97,24 @@ public class Session {
 
 
     public void setBankUser2(BankUser2 bankUser2) {
-        this.bankUser2 = bankUser2;
+        try{
+            this.transactionList = bankDatabase.getBankTransactionsByCustomerId(bankUser2.getCustomer_id());
+            this.bankUser2 = bankUser2;
+        }
+        catch(Exception e){
+            return;
+        }
     }
 
     public BankUser2 getBankUser2() {
         return bankUser2;
     }
 
+    public List<BankTransaction> getTransactionList() {
+        return transactionList;
+    }
+
+    public void setTransactionList(List<BankTransaction> transactionList) {
+        this.transactionList = transactionList;
+    }
 }

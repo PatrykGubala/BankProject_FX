@@ -1,7 +1,5 @@
 .client {
     -fx-background-color: #47474b;
-    -fx-text-fill: #ffffff;
-
 }
 
 .client-menu-item {
@@ -27,6 +25,14 @@
     -fx-text-fill: #FFF;
     -fx-background-color: #2a2a2a;
 
+}
+.list-view .list-cell:even {
+    -fx-background-color: #484844;
+    -fx-text-fill: black;
+}
+.list-view .list-cell:odd {
+    -fx-background-color: #36362e;
+    -fx-text-fill: black;
 }
 
 .client-logout {

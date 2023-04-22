@@ -5,22 +5,14 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox prefHeight="20.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<HBox prefHeight="20.0" prefWidth="650.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="fromLabel" prefHeight="27.0" prefWidth="152.0">
+      <Label fx:id="fromLabel" prefHeight="27.0" prefWidth="152.0" styleClass="client-text">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <Label fx:id="toLabel" prefHeight="27.0" prefWidth="152.0">
-         <font>
-            <Font size="13.0" />
-         </font>
-         <HBox.margin>
-            <Insets left="14.0" />
-         </HBox.margin>
-      </Label>
-      <Label fx:id="amountLabel" prefHeight="27.0" prefWidth="152.0">
+      <Label fx:id="toLabel" prefHeight="27.0" prefWidth="152.0" styleClass="client-text">
          <font>
             <Font size="13.0" />
          </font>
@@ -28,7 +20,15 @@
             <Insets left="14.0" />
          </HBox.margin>
       </Label>
-      <Label fx:id="transactionDateLabel" prefWidth="152.0">
+      <Label fx:id="amountLabel" prefHeight="27.0" prefWidth="152.0" styleClass="client-text">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <HBox.margin>
+            <Insets left="14.0" />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="transactionDateLabel" prefWidth="152.0" styleClass="client-text">
          <HBox.margin>
             <Insets left="14.0" />
          </HBox.margin>

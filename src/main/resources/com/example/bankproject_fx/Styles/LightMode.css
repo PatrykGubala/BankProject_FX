@@ -1,7 +1,5 @@
 .client {
-    -fx-background-color: #47474b;
-    -fx-text-fill: #ffffff;
-
+    -fx-background-color: #efefe1;
 }
 
 .client-menu-item {
@@ -15,8 +13,23 @@
     -fx-background-color: #016064;
 
 }
+.list-view .list-cell:even {
+    -fx-background-color: #f1f1cc;
+    -fx-text-fill: black;
+}
+.list-view .list-cell:odd {
+    -fx-background-color: #f1f1cc;
+    -fx-text-fill: black;
+}
 
-
+.list-view-cards .list-cell-cards:even {
+    -fx-background-color: #f1f1cc;
+    -fx-text-fill: black;
+}
+.list-view-cards .list-cell-cards:odd {
+    -fx-background-color: #f1f1cc;
+    -fx-text-fill: black;
+}
 .client-inputbox {
     -fx-background-color: transparent;
     -fx-border-color: #016064;
@@ -42,7 +55,7 @@
 
 .client-text {
     -fx-font-size: 14px;
-    -fx-text-fill: #FFF;
+    -fx-text-fill: #000;
 }
 
 .client-logout:hover {

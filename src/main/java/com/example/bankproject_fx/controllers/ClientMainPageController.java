@@ -7,6 +7,7 @@ import com.example.bankproject_fx.views.Mode;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
@@ -75,6 +76,10 @@ public class ClientMainPageController implements Initializable {
 
     @FXML
     private Label nameLabel;
+    @FXML
+    private Label topUpCardInPLNCurrency;
+    @FXML
+    private Label transferAmountInPLNCurrencyLabel;
 
     @FXML
     private Button sendMoneyButton;
@@ -83,7 +88,8 @@ public class ClientMainPageController implements Initializable {
 
     @FXML
     private AnchorPane mainWindow;
-
+    @FXML
+    private Button refreshButton;
     private ObservableList<String> cardNumbersAvailable = FXCollections.observableArrayList();
     private ObservableList<String> currenciesAvailable = FXCollections.observableArrayList();
     private ObservableList<String> currenciesAll = FXCollections.observableArrayList();
@@ -103,6 +109,7 @@ public class ClientMainPageController implements Initializable {
         cardChoiceTopUpComboBox.valueProperty().addListener((observable, oldValue, newValue) -> handleTopUpInputChange());
         cardChoiceTopUpComboBox.valueProperty().addListener((observable, oldValue, newValue) -> handleTopUpCardInputChange());
         amountField.textProperty().addListener((observable, oldValue, newValue) -> handleInputChange());
+        //amountAddCardField.textProperty().addListener((observable, oldValue, newValue) -> handleAmountInputChange(amountAddCardField,currencyChoiceAddCardField.getValue(),"betterExchangeRates" ));
 
         // Set up the text formatter to allow only numbers
         TextFormatter<Integer> formatter = new TextFormatter<>(new IntegerStringConverter(), null,
@@ -140,6 +147,8 @@ public class ClientMainPageController implements Initializable {
         });
 
         validatorCheck(amountField);
+        validatorCheck(amountTopUpCardField);
+        validatorCheck(amountAddCardField);
 
 
 
@@ -150,6 +159,11 @@ public class ClientMainPageController implements Initializable {
 
 
 
+
+    }
+    @FXML
+    void onRefreshButtonClicked(MouseEvent event) {
+        updateClientScene();
     }
     @FXML
     void onAddCardButtonClicked(MouseEvent event) {
@@ -209,26 +223,30 @@ public class ClientMainPageController implements Initializable {
 
     }
     public void updateClientScene(){
+        try{
+            currencyChoiceField.setItems(Session.getInstance().getAllCurrenciesAvailable());
+            currencyChoiceField.getSelectionModel().selectFirst();
+            cardChoiceTopUpComboBox.setItems(cardNumbersAvailable);
+            cardChoiceTopUpComboBox.getSelectionModel().selectFirst();
 
-        currencyChoiceField.setItems(Session.getInstance().getAllCurrenciesAvailable());
-        currencyChoiceField.getSelectionModel().selectFirst();
-        cardChoiceTopUpComboBox.setItems(cardNumbersAvailable);
-        cardChoiceTopUpComboBox.getSelectionModel().selectFirst();
-
-        currencyChoiceAddCardField.setItems(Session.getInstance().getAllCurrenciesAvailable());
-        currencyChoiceAddCardField.getSelectionModel().selectFirst();
+            currencyChoiceAddCardField.setItems(Session.getInstance().getAllCurrenciesAvailable());
+            currencyChoiceAddCardField.getSelectionModel().selectFirst();
 
 
-        cardNumbersAvailable.clear();
-        for(BankCard2 bankCard2 : Session.getInstance().getBankUser2().getBankCards()) {
-            cardNumbersAvailable.add(bankCard2.getBank_card_number());
+            cardNumbersAvailable.clear();
+            for(BankCard2 bankCard2 : Session.getInstance().getBankUser2().getBankCards()) {
+                cardNumbersAvailable.add(bankCard2.getBank_card_number());
+            }
+            cardChoiceTopUpComboBox.setItems(cardNumbersAvailable);
+            cardChoiceTopUpComboBox.getSelectionModel().selectFirst();
+            emailLabel.setText(Session.getInstance().getBankUser2().getEmail());
+            hiLabel.setText(Session.getInstance().getBankUser2().getFirst_name());
+            nameLabel.setText(Session.getInstance().getBankUser2().getFirst_name()+" "+Session.getInstance().getBankUser2().getLast_name());
+            moneyLabel.setText(Double.toString(Session.getInstance().getBankUser2().getBalance()));
+        }catch(Exception e){
+            return;
         }
-        cardChoiceTopUpComboBox.setItems(cardNumbersAvailable);
-        cardChoiceTopUpComboBox.getSelectionModel().selectFirst();
-        emailLabel.setText(Session.getInstance().getBankUser2().getEmail());
-        hiLabel.setText(Session.getInstance().getBankUser2().getFirst_name());
-        nameLabel.setText(Session.getInstance().getBankUser2().getFirst_name()+" "+Session.getInstance().getBankUser2().getLast_name());
-        moneyLabel.setText(Double.toString(Session.getInstance().getBankUser2().getBalance()));
+
 
     }
     @FXML
@@ -272,15 +290,38 @@ public class ClientMainPageController implements Initializable {
 
         BankTransaction transaction = new BankTransaction(senderUser.getCustomer_id(), bankCard2.getCustomer_id(),formattedDateTime,messageField.getText(),amount);
         Session.getInstance().getBankDatabase().addBankTransaction(transaction);
+
         AlertHelper.showAlert(Alert.AlertType.INFORMATION, "Success", "Money sent successfully.", "");
 
 
         updateClientScene();
+        //add code to update transactions list int the TransactionsPageController
 
     }
 
     @FXML
     void onChoiceCurrencyComboBoxClicked(MouseEvent event) {
+
+    }
+
+    public void handleAmountInputChange(TextField amountField,String currencyChoice ,String exchangeRates) {
+        if(exchangeRates.equals("betterExchangeRates") ){
+            try {
+                double amount = Double.parseDouble(amountField.getText())*Session.getInstance().getBetterExchangeRates().get(currencyChoice);
+                //transferAmountInPLNLabel.setText(String.valueOf(amount));
+
+            } catch (NumberFormatException e) {
+                return;
+            }
+        }else if(exchangeRates.equals("exchangeRates") ){
+            try {
+                double amount = Double.parseDouble(amountField.getText())*Session.getInstance().getExchangeRates().get(currencyChoice);
+                //transferAmountInPLNLabel.setText(String.valueOf(amount));
+
+            } catch (NumberFormatException e) {
+                return;
+            }
+        }
 
     }
     public void handleInputChange() {
@@ -292,6 +333,7 @@ public class ClientMainPageController implements Initializable {
              return;
         }
     }
+
 
     public void handleTopUpInputChange() {
         try {
@@ -356,6 +398,7 @@ public class ClientMainPageController implements Initializable {
 
 
         updateClientScene();
+
     }
 
 

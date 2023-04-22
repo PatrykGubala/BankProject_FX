@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -9,36 +10,29 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bankproject_fx.controllers.TransactionsPageController">
+<AnchorPane prefHeight="600.0" prefWidth="650.0" styleClass="client" stylesheets="@Styles/LightMode.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bankproject_fx.controllers.TransactionsPageController">
    <children>
       <VBox layoutX="1.0" prefHeight="600.0" prefWidth="650.0">
          <children>
             <HBox prefHeight="30.0" prefWidth="650.0">
                <children>
-                  <Label text="Sortuj według:">
+                  <Label styleClass="client-text" text="Sortuj według:">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <ChoiceBox prefWidth="150.0" />
+                  <ChoiceBox fx:id="sortingComboBoxId" prefWidth="150.0" />
+                  <Button fx:id="refreshButton" mnemonicParsing="false" onMouseClicked="#onRefreshButtonClicked" prefHeight="25.0" prefWidth="104.0" styleClass="client-menu-item" text="Refresh" />
                </children>
             </HBox>
             <HBox prefHeight="30.0" prefWidth="650.0">
                <children>
-                  <Label prefHeight="27.0" prefWidth="152.0" text="OD: ">
+                  <Label prefHeight="27.0" prefWidth="152.0" styleClass="client-text" text="OD: ">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="27.0" prefWidth="152.0" text="DO: ">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="14.0" />
-                     </HBox.margin>
-                  </Label>
-                  <Label prefHeight="27.0" prefWidth="152.0" text="Kwota:">
+                  <Label prefHeight="27.0" prefWidth="152.0" styleClass="client-text" text="DO: ">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -46,7 +40,15 @@
                         <Insets left="14.0" />
                      </HBox.margin>
                   </Label>
-                  <Label prefWidth="152.0" text="Data transakcji:">
+                  <Label prefHeight="27.0" prefWidth="152.0" styleClass="client-text" text="Kwota:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="14.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label prefWidth="152.0" styleClass="client-text" text="Data transakcji:">
                      <font>
                         <Font size="18.0" />
                      </font>

@@ -32,6 +32,9 @@ public class BankUser2 {
         this.customer_birth_date = customer_birth_date;
         this.balance = balance;
         bankCards = new ArrayList<BankCard2>();
+
+
+
     }
 
     private double balance;

@@ -26,5 +26,10 @@
             <Font name="Monospaced Bold" size="18.0" />
          </font>
       </Label>
+      <Label fx:id="cardAmmountId" alignment="CENTER_RIGHT" layoutX="84.0" layoutY="22.0" prefHeight="35.0" prefWidth="138.0" styleClass="credit-card-text" textAlignment="RIGHT">
+         <font>
+            <Font name="Monospaced Bold" size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
